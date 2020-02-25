@@ -1,7 +1,6 @@
 const sendHttpRequest = (method, url, data) => {
   const promise = new Promise((resolve, reject) => {
     const xhr = new XMLHttpRequest();
-
     xhr.open(method, url);
 
     xhr.responseType = "json";
@@ -28,45 +27,39 @@ const sendHttpRequest = (method, url, data) => {
 };
 
 const getAllGraduates = () => {
-  sendHttpRequest("GET", "http://localhost:3000/api/graduates", true).then(
+  console.log("working");
+  sendHttpRequest("GET", "http://localhost:3000/api/graduates").then(
     responseData => {
       console.log(responseData);
-      // document.getElementById("results").innerHTML = JSON.stringify(
-      //   responseData
-      // );
 
-      const listGraduates = responseData.map(element => {
+      const listItems = responseData.map(element => {
         return (
           "<li>" +
-          "First Name:" +
+          "First Name: " +
           element.firstName +
-          "," +
+          " , " +
           "Last Name: " +
           element.lastName +
-          "," +
+          " , " +
           "Email: " +
           element.email +
           "</li>"
         );
       });
-      console.log(listGraduates);
       document.getElementById("results").innerHTML =
-        "<ul>" + listGraduates.join("\n") + "</ul>";
+        "<ul>" + listItems.join("\n") + "</ul>";
     }
   );
 };
 
 function createNewGraduate() {
-  event.preventDefault();
   var graduate = {
     firstName: document.getElementById("firstName").value,
     lastName: document.getElementById("lastName").value,
     email: document.getElementById("email").value
   };
-
-  var xhr = new XMLHttpRequest();
-
+  var xhr = new window.XMLHttpRequest();
   xhr.open("POST", "http://localhost:3000/api/graduates");
-  xhr.setRequestHeader("Content-Type", "application/json");
+  xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
   xhr.send(JSON.stringify(graduate));
 }
