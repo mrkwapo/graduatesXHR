@@ -37,16 +37,46 @@ const getAllGraduates = () => {
 
       const listGraduates = responseData.map(element => {
         return (
-          "<li>" +
-          "First Name:" +
+          //Unordered List beginning
+          // "<li>" +
+          // "First Name:" +
+          // element.firstName +
+          // "," +
+          // "Last Name: " +
+          // element.lastName +
+          // "," +
+          // "Email: " +
+          // element.email +
+          // "</li>"
+          //Unordered List end
+
+          //table beginining
+          "<table>" +
+          "<tr>" +
+          "<th>" +
+          "First Name" +
+          "</th>" +
+          "<th>" +
+          "Last Name" +
+          "</th>" +
+          "<th>" +
+          "Email" +
+          "</th>" +
+          "</tr>" +
+          "<tr>" +
+          "<td>" +
           element.firstName +
-          "," +
-          "Last Name: " +
+          "</td>" +
+          "<td>" +
           element.lastName +
-          "," +
-          "Email: " +
+          "</td>" +
+          "<td>" +
           element.email +
-          "</li>"
+          "</td>" +
+          "</tr>" +
+          "</table>"
+
+          //table end
         );
       });
       console.log(listGraduates);
