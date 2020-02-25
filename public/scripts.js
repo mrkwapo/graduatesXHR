@@ -31,26 +31,9 @@ const getAllGraduates = () => {
   sendHttpRequest("GET", "http://localhost:3000/api/graduates", true).then(
     responseData => {
       console.log(responseData);
-      // document.getElementById("results").innerHTML = JSON.stringify(
-      //   responseData
-      // );
 
       const listGraduates = responseData.map(element => {
         return (
-          //Unordered List beginning
-          // "<li>" +
-          // "First Name:" +
-          // element.firstName +
-          // "," +
-          // "Last Name: " +
-          // element.lastName +
-          // "," +
-          // "Email: " +
-          // element.email +
-          // "</li>"
-          //Unordered List end
-
-          //table beginining
           "<table>" +
           "<tr>" +
           "<th>" +
@@ -75,8 +58,6 @@ const getAllGraduates = () => {
           "</td>" +
           "</tr>" +
           "</table>"
-
-          //table end
         );
       });
       console.log(listGraduates);
