@@ -31,27 +31,9 @@ const getAllGraduates = () => {
   sendHttpRequest("GET", "http://localhost:3000/api/graduates", true).then(
     responseData => {
       console.log(responseData);
-      // document.getElementById("results").innerHTML = JSON.stringify(
-      //   responseData
-      // );
-
-      const listGraduates = responseData.map(element => {
-        return (
-          "<li>" +
-          "First Name:" +
-          element.firstName +
-          "," +
-          "Last Name: " +
-          element.lastName +
-          "," +
-          "Email: " +
-          element.email +
-          "</li>"
-        );
-      });
-      console.log(listGraduates);
-      document.getElementById("results").innerHTML =
-        "<ul>" + listGraduates.join("\n") + "</ul>";
+      document.getElementById("results").innerHTML = JSON.stringify(
+        responseData
+      );
     }
   );
 };
