@@ -34,18 +34,6 @@ const getAllGraduates = () => {
 
       const listGraduates = responseData.map(element => {
         return (
-          "<table>" +
-          "<tr>" +
-          "<th>" +
-          "First Name" +
-          "</th>" +
-          "<th>" +
-          "Last Name" +
-          "</th>" +
-          "<th>" +
-          "Email" +
-          "</th>" +
-          "</tr>" +
           "<tr>" +
           "<td>" +
           element.firstName +
@@ -56,13 +44,25 @@ const getAllGraduates = () => {
           "<td>" +
           element.email +
           "</td>" +
-          "</tr>" +
-          "</table>"
+          "</tr>"
         );
       });
       console.log(listGraduates);
       document.getElementById("results").innerHTML =
-        "<ul>" + listGraduates.join("\n") + "</ul>";
+        "<table>" +
+        "<tr>" +
+        "<th>" +
+        "First Name" +
+        "</th>" +
+        "<th>" +
+        "Last Name" +
+        "</th>" +
+        "<th>" +
+        "Email" +
+        "</th>" +
+        "</tr>" +
+        listGraduates.join("\n") +
+        "</table>";
     }
   );
 };
