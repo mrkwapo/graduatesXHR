@@ -46,22 +46,9 @@ sendHttpRequest("GET", "http://localhost:3000/api/graduates", true).then(
 responseData => {
 console.log(responseData);
 
-      const listItems = responseData.map(element => {
-        return (
-          "<li>" +
-          "First Name: " +
-          element.firstName +
-          " , " +
-          "Last Name: " +
-          element.lastName +
-          " , " +
-          "Email: " +
-          element.email +
-          "</li>"
-        );
-      });
-      document.getElementById("results").innerHTML =
-        "<ul>" + listItems.join("\n") + "</ul>";
+      document.getElementById("results").innerHTML = JSON.stringify(
+        responseData
+      );
     }
 
 );
