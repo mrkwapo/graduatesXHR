@@ -46,22 +46,37 @@ sendHttpRequest("GET", "http://localhost:3000/api/graduates", true).then(
 responseData => {
 console.log(responseData);
 
-      const listItems = responseData.map(element => {
+      const listGraduates = responseData.map(element => {
         return (
-          "<li>" +
-          "First Name: " +
+          "<tr>" +
+          "<td>" +
           element.firstName +
-          " , " +
-          "Last Name: " +
+          "</td>" +
+          "<td>" +
           element.lastName +
-          " , " +
-          "Email: " +
+          "</td>" +
+          "<td>" +
           element.email +
-          "</li>"
+          "</td>" +
+          "</tr>"
         );
       });
+      console.log(listGraduates);
       document.getElementById("results").innerHTML =
-        "<ul>" + listItems.join("\n") + "</ul>";
+        "<table>" +
+        "<tr>" +
+        "<th>" +
+        "First Name" +
+        "</th>" +
+        "<th>" +
+        "Last Name" +
+        "</th>" +
+        "<th>" +
+        "Email" +
+        "</th>" +
+        "</tr>" +
+        listGraduates.join("\n") +
+        "</table>";
     }
 
 );
