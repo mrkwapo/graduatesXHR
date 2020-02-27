@@ -71,10 +71,10 @@ function updateGraduate() {
   var json = JSON.stringify(updatedGraduate);
 
   var xhr = new XMLHttpRequest();
-  xhr.open("PUT", "http://localhost:3000/api/graduates/" + email, true);
+  xhr.open("PATCH", "http://localhost:3000/api/graduates/" + email, true);
   xhr.setRequestHeader("Content-type", "application/json; charset=utf-8");
   xhr.onload = function() {
-    var graduate = JSON.stringify(xhr.responseText);
+    var graduate = json;
     if (xhr.readyState == 4 && xhr.status == "200") {
       console.log(graduate);
     } else {
