@@ -8,7 +8,6 @@ function createNewGraduate() {
   };
 
   var xhr = new XMLHttpRequest();
-
   xhr.open("POST", "http://localhost:3000/api/graduates");
   xhr.setRequestHeader("Content-Type", "application/json");
   xhr.send(JSON.stringify(graduate));
@@ -31,13 +30,12 @@ function getAllGraduates() {
   xhr.send(null);
 }
 
-//READ One (by Email)
+//READ One (By Email)
 function getOneGraduateByEmail() {
   event.preventDefault();
   const input = document.getElementById("findByEmail").value;
   var xhr = new XMLHttpRequest();
   xhr.open("GET", "http://localhost:3000/api/graduates/" + input, true);
-  console.log(input);
 
   xhr.onload = function() {
     console.log(JSON.parse(xhr.responseText));
@@ -85,7 +83,6 @@ function updateGraduate() {
 }
 
 //DELETE
-
 function deleteGraduate() {
   event.preventDefault();
   const input = document.getElementById("delete").value;
