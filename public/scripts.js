@@ -27,35 +27,21 @@ function getAllGraduates() {
       console.log(graduates);
       const listGraduates = graduates.map(element => {
         return (
-          "<tr>" +
-          "<td>" +
+          "<li>" +
+          "First Name: " +
           element.firstName +
-          "</td>" +
-          "<td>" +
+          ", " +
+          "Last Name: " +
           element.lastName +
-          "</td>" +
-          "<td>" +
+          ", " +
+          "Email: " +
           element.email +
-          "</td>" +
-          "</tr>"
+          "</li>"
         );
       });
       console.log(listGraduates);
       document.getElementById("results").innerHTML =
-        "<table>" +
-        "<tr>" +
-        "<th>" +
-        "First Name" +
-        "</th>" +
-        "<th>" +
-        "Last Name" +
-        "</th>" +
-        "<th>" +
-        "Email" +
-        "</th>" +
-        "</tr>" +
-        listGraduates.join("\n") +
-        "</table>";
+        "<ul>" + listGraduates.join("") + "</ul>";
     } else {
       console.error(graduates);
     }
@@ -74,32 +60,19 @@ function getOneGraduateByEmail() {
     var graduate = JSON.parse(xhr.responseText);
     if (xhr.readyState == 4 && xhr.status == "200") {
       console.log(graduate);
-      document.getElementById("findOneResult").innerHTML = JSON.stringify(
-        "<table>" +
-          "<tr>" +
-          "<th>" +
-          "First Name" +
-          "</th>" +
-          "<th>" +
-          "Last Name" +
-          "</th>" +
-          "<th>" +
-          "Email" +
-          "</th>" +
-          "</tr>" +
-          "<tr>" +
-          "<td>" +
-          graduate.firstName +
-          "</td>" +
-          "<td>" +
-          graduate.lastName +
-          "</td>" +
-          "<td>" +
-          graduate.email +
-          "</td>" +
-          "</tr>" +
-          "</table>"
-      );
+      document.getElementById("findOneResult").innerHTML =
+        "<ul>" +
+        "<li>" +
+        "First Name: " +
+        graduate.firstName +
+        ", " +
+        "Last Name: " +
+        graduate.lastName +
+        ", " +
+        "Email: " +
+        graduate.email +
+        "</li>" +
+        "</ul>";
 
       console.log(graduate);
     } else {
