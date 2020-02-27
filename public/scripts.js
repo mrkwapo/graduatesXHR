@@ -74,34 +74,31 @@ function getOneGraduateByEmail() {
     var graduate = JSON.parse(xhr.responseText);
     if (xhr.readyState == 4 && xhr.status == "200") {
       console.log(graduate);
-      document.getElementById("findOneResult").innerHTML = JSON.stringify(
+      document.getElementById("findOneResult").innerHTML =
         "<table>" +
-          "<tr>" +
-          "<th>" +
-          "First Name" +
-          "</th>" +
-          "<th>" +
-          "Last Name" +
-          "</th>" +
-          "<th>" +
-          "Email" +
-          "</th>" +
-          "</tr>" +
-          "<tr>" +
-          "<td>" +
-          graduate.firstName +
-          "</td>" +
-          "<td>" +
-          graduate.lastName +
-          "</td>" +
-          "<td>" +
-          graduate.email +
-          "</td>" +
-          "</tr>" +
-          "</table>"
-      );
-
-      console.log(graduate);
+        "<tr>" +
+        "<th>" +
+        "First Name" +
+        "</th>" +
+        "<th>" +
+        "Last Name" +
+        "</th>" +
+        "<th>" +
+        "Email" +
+        "</th>" +
+        "</tr>" +
+        "<tr>" +
+        "<td>" +
+        graduate.firstName +
+        "</td>" +
+        "<td>" +
+        graduate.lastName +
+        "</td>" +
+        "<td>" +
+        graduate.email +
+        "</td>" +
+        "</tr>" +
+        "</table>";
     } else {
       document.getElementById("findOneResult").innerHTML =
         "<i>graduate not found</i>";
