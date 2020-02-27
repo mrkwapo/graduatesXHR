@@ -34,5 +34,39 @@
 
     <button onclick="getAllGraduates()">Get Request</button>
     <div id="results"></div>
+
+    <h2>Find One Graduate</h2>
+      <label for="findByEmail">Search By Email:</label>
+      <input type="text" id="findByEmail" placeholder="example@example.com"/>
+      <button onclick="getOneGraduateByEmail()" >Get Request</button>
+      <div id="emailResult"></div>     
+
+
+      <h2>Update Graduate</h2>
+      <label for="firstName">First Name:</label>
+      <input type="text" id="updateFirstName" />
+      <br />
+      <label for="lastName">Last Name:</label>
+      <input type="text" id="updateLastName" />
+      <br />
+      <label for="email">Email:</label>
+      <input type="text" id="updateByEmail" />
+      <br />
+
+      <button
+        
+        id="put-btn"
+        onclick="updateGraduate()"
+        value="submit"
+      >
+        Put Request
+      </button>
+    </form>
+
+    <h2>Delete a Graduate</h2>
+      <label for="delete">Enter Email:</label>
+      <input type="text" id="delete" placeholder="example@example.com"/>
+      <button onclick="deleteGraduate()" >Delete Request</button>
+      <div id="deleteResult"></div> 
   </body>
 </html>
