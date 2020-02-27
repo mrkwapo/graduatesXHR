@@ -48,21 +48,35 @@ console.log(responseData);
 
       const listGraduates = responseData.map(element => {
         return (
-          "<li>" +
-          "First Name: " +
+          "<tr>" +
+          "<td>" +
           element.firstName +
-          ", " +
-          "Last Name: " +
+          "</td>" +
+          "<td>" +
           element.lastName +
-          ", " +
-          "Email: " +
+          "</td>" +
+          "<td>" +
           element.email +
-          "</li>"
+          "</td>" +
+          "</tr>"
         );
       });
       console.log(listGraduates);
       document.getElementById("results").innerHTML =
-        "<ul>" + listGraduates.join("\n") + "</ul>";
+        "<table>" +
+        "<tr>" +
+        "<th>" +
+        "First Name" +
+        "</th>" +
+        "<th>" +
+        "Last Name" +
+        "</th>" +
+        "<th>" +
+        "Email" +
+        "</th>" +
+        "</tr>" +
+        listGraduates.join("\n") +
+        "</table>";
     }
 
 );
